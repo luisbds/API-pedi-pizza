@@ -1,3 +1,4 @@
+
 const {Model} = require('sequelize')
 
 class Pedido extends Model {
@@ -10,14 +11,3 @@ class Pedido extends Model {
 }
 
 module.exports = Pedido 
-
-class Pizza extends Model {
-    static associate(model) {
-        pizza.belongsToMany(model.Pedido, {
-            foreignKey: 'pedido_id',
-            as: 'possuiPedido' 
-        })
-    }
-}
-
-module.exports = Pizza 
