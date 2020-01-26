@@ -5,7 +5,8 @@ class Pedido extends Model {
         super.init({
            item: DataTypes.STRING, 
         }, {
-             sequelize 
+             sequelize,
+             tableName: "pedido"  
         })
     }
 }

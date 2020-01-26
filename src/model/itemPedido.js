@@ -6,7 +6,8 @@ class itemPedido extends Model {
            pizza: DataTypes.STRING, 
            quantidade: DataTypes.STRING
         }, {
-             sequelize 
+             sequelize,
+             tableName: "itemPedido"  
         })
     }
 }
