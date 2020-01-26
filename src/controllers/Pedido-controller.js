@@ -3,8 +3,10 @@ const Pizza = require('../model/pizza')
 
 module.exports = {
     async store (req, res) {
-        const {pizza_id} = req.params
         const {item} = req.body
+        const {pizza_id} = req.params
+
+        console.log(pizza_id) 
 
         const pizza = await Pizza.findByPk(pizza_id)
 
@@ -15,11 +17,10 @@ module.exports = {
         /*
         const pedido = await Pedido.create({item})
         */
-        const [pedido, created] = await Pedido.findOrCreate({
-            where : {item} 
-        }) 
-
-        await pizza.addPedido(pedido) 
+       const pedido = await Pedido.create({
+           item,
+           pizza_id 
+       }) 
 
         return res.json(pedido) 
     }

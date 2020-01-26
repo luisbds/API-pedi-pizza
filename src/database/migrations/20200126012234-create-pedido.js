@@ -9,6 +9,10 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
+      }, 
+      item: { 
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       pizza_id:{
         type: Sequelize.INTEGER,
@@ -17,11 +21,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       }, 
-      item: { 
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      created_at: {
+      created_at: { 
         type: Sequelize.DATE,
         allowNull: false,
       },
