@@ -23,5 +23,12 @@ module.exports = {
        }) 
 
         return res.json(pedido) 
+    },
+    async buscarPedido(req, res) {
+        const {pizza_id} = req.params
+        const pedido = await Pedido.findByPk(pizza_id, {
+            include: {association:'pizza'}
+        })
+        return res.json(pedido) 
     }
 }

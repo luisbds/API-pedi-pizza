@@ -7,5 +7,10 @@ module.exports = {
         const pizza = await Pizza.create({nome, ingredientes, preco})
 
         return res.json(pizza) 
+    },
+
+    async ListarPizza(req, res) {
+        const listapizza = await Pizza.findAll()
+        return res.json(listapizza) 
     }
 }
