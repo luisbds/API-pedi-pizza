@@ -18,6 +18,13 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      pedido_id:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {model: 'pedido', key:'id'},
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
